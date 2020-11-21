@@ -29,38 +29,13 @@ namespace FirstApi2xd.Controllers.V1
             return Ok(await _postService.GetPostsAsync());
         }
 
-        [HttpGet(ApiRoutes.Posts.Get)]
-        public async Task<IActionResult> Get([FromRoute]Guid postId)
-        {
-            var post = await _postService.GetPostByIdAsync(postId);
-            if (post == null)
-                return NotFound();
-            
-            return Ok(post);
-        }
-
-        [HttpPost(ApiRoutes.Posts.Create)]
-        public async Task<IActionResult> Create([FromBody] CreatePostRequest postRequest)
-        {
-            var post = new Post {Name = postRequest.Name};
-
-            await _postService.CreatePostAsync(post);
-
-            var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
-            var locationUri = baseUrl + "/" + ApiRoutes.Posts.Get.Replace("{postId}" , post.Id.ToString());
-            var response = new PostResponse{Id = post.Id};
-
-            return Created(locationUri, response);
-
-        }
-
         [HttpPut(ApiRoutes.Posts.Update)]
-        public async Task<IActionResult> Update([FromRoute]Guid postId,[FromBody] UpdatePostRequest request)
+        public async Task<IActionResult> Update([FromRoute] Guid postId, [FromBody] UpdatePostRequest request)
         {
             var userOwnsPost = await _postService.UserOwnsPostAsync(postId, HttpContext.GetUserId());
             if (!userOwnsPost)
             {
-                return BadRequest(new {error = "You do not own this post"});
+                return BadRequest(new { error = "You do not own this post" });
             }
 
             var post = await _postService.GetPostByIdAsync(postId);
@@ -91,8 +66,44 @@ namespace FirstApi2xd.Controllers.V1
             //Puede retornar un 204 NoContent sin el body del post
             if (deleted)
                 return NoContent();
-            
+
             return NotFound();
         }
+
+        [HttpGet(ApiRoutes.Posts.Get)]
+        public async Task<IActionResult> Get([FromRoute]Guid postId)
+        {
+            var post = await _postService.GetPostByIdAsync(postId);
+            if (post == null)
+                return NotFound();
+            
+            return Ok(post);
+        }
+
+        [HttpPost(ApiRoutes.Posts.Create)]
+        public async Task<IActionResult> Create([FromBody] CreatePostRequest postRequest)
+        {
+            var newPostId = Guid.NewGuid();
+            var post = new Post
+            {
+                Id = newPostId,
+                Name = postRequest.Name,
+                UserId = HttpContext.GetUserId(),
+                Tags = postRequest.Tags.Select(x=> new PostTag{PostId = newPostId, TagName = x}).ToList()
+            };
+
+            await _postService.CreatePostAsync(post);
+
+            var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
+            var locationUri = baseUrl + "/" + ApiRoutes.Posts.Get.Replace("{postId}" , post.Id.ToString());
+            var response = new PostResponse{Id = post.Id};
+
+            return Created(locationUri, response);
+
+        }
+
+
+
+
     }
 }

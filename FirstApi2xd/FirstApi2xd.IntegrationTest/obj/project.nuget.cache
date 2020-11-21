@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LAM9qYPkl8kVVVBZ6VNVv6DTEX4AgEH+xpVk8JQK11nkqbBFulDKrZPCTYK4QF9LqAhGIzMBCr4sZVYh00CCBw==",
+  "dgSpecHash": "u+5sMPcbouXyNL35LEkBLhsPyg5pKaqdLL8tZwrTQl75mMK+Vb+qjSCEqJupcf8YRw20oCYuJNCkAgm+W5ZKLA==",
   "success": true,
   "projectFilePath": "D:\\GitHubRepos\\FirstApi\\ApiNetCore\\FirstApi2xd\\FirstApi2xd.IntegrationTest\\FirstApi2xd.IntegrationTest.csproj",
   "expectedPackageFiles": [
