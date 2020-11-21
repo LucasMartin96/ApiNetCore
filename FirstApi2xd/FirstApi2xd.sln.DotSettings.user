@@ -1,7 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=39ed6959_002D6e00_002D42ff_002D8603_002De0bee3f97c8d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UnitTest1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::28F57206-F748-40C6-A35C-E7F0566F6205::.NETCoreApp,Version=v2.2::FirstApi2xd.IntegrationTest.PostsControllerTest.GetAll_WithoutAnyPosts_ReturnsEmptyResponse&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::28F57206-F748-40C6-A35C-E7F0566F6205::.NETCoreApp,Version=v2.2::FirstApi2xd.IntegrationTest.PostsControllerTest.Get_ReturnsPosts_WhenPostExistsInTheDatabase&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::28F57206-F748-40C6-A35C-E7F0566F6205::.NETCoreApp,Version=v3.0::FirstApi2xd.IntegrationTest.PostsControllerTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

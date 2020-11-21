@@ -9,7 +9,6 @@ using FirstApi2xd.Data;
 using FirstApi2xd.Domain;
 using FirstApi2xd.Options;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Azure.Documents;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 

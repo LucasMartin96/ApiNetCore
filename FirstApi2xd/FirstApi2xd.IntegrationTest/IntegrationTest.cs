@@ -1,6 +1,6 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using FirstApi2xd.Contracts.v1;
 using FirstApi2xd.Contracts.v1.Requests;
@@ -13,11 +13,11 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace FirstApi2xd.IntegrationTest
 {
-    public class IntegrationTest
+    public class IntegrationTest : IDisposable
     {
 
         protected readonly HttpClient TestClient;
-
+        private readonly IServiceProvider _serviceProvider;
         protected IntegrationTest()
         {
             var appFactory = new WebApplicationFactory<Startup>()
@@ -33,6 +33,7 @@ namespace FirstApi2xd.IntegrationTest
                         });
                     });
                 });
+            _serviceProvider = appFactory.Services;
             TestClient = appFactory.CreateClient();
         }
 
@@ -57,6 +58,15 @@ namespace FirstApi2xd.IntegrationTest
         {
            var response = await TestClient.PostAsJsonAsync(ApiRoutes.Posts.Create, request);
            return await response.Content.ReadAsAsync<PostResponse>();
-        } 
+        }
+
+        public void Dispose()
+        {
+            // Delete the DB on every test
+            using var serviceScope = _serviceProvider.CreateScope();
+            var context = serviceScope.ServiceProvider.GetService<DataContext>();
+            context.Database.EnsureDeleted();
+
+        }
     }
 }
