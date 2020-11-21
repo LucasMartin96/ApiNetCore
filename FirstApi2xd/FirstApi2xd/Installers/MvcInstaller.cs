@@ -2,9 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using FirstApi2xd.Authorization;
 using FirstApi2xd.Options;
 using FirstApi2xd.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -60,6 +62,22 @@ namespace FirstApi2xd.Installers
                     options.AddPolicy("TagViewer", builder => builder.RequireClaim("tags.view", "true"));
                 });
             */
+            
+            
+            // Empieza Agregar un requerimiento personalizado a las politicas
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("MustWorkForLucas", policy =>
+                {
+                    // policy require rol!!
+                    policy.AddRequirements(new WorksForCompanyRequirement("lucas.com"));
+                });
+            });
+
+            services.AddSingleton<IAuthorizationHandler, WorksForCompanyHandler>();
+
+            // Termina
 
 
 

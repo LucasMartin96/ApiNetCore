@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FirstApi2xd.Controllers.V1
 {
     // Roles = "Admin,Post" Admite los dos roles
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Poster")]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Poster")]
     public class TagsController : Controller
     {
         private readonly IPostService _postService;
@@ -58,20 +58,25 @@ namespace FirstApi2xd.Controllers.V1
                 return BadRequest(new[] {"Unable to create tag"});
             }
 
+            var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
+            var locationUri = baseUrl + "/" + ApiRoutes.Tags.Get.Replace("{tagName}", newTag.Name);
+
+
             return Ok(new {TagName= newTag.Name});
         }
 
         [HttpDelete(ApiRoutes.Tags.Delete)]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
+        [Authorize(Policy = "MustWorkForLucas")]
         public async Task<IActionResult> DeleteTag([FromRoute] string tagName)
         {
             var deleted = await _postService.DeleteTagAsync(tagName);
-            if (!deleted)
+            if (deleted)
             {
-                return NotFound();
+                return NoContent();
             }
 
-            return Ok();
+            return NotFound();
         }
     }
 }
