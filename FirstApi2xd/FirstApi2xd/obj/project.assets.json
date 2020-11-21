@@ -13276,11 +13276,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\luks_\\source\\repos\\FirstApi2xd\\FirstApi2xd\\FirstApi2xd.csproj",
+      "projectUniqueName": "D:\\GitHubRepos\\FirstApi\\ApiNetCore\\FirstApi2xd\\FirstApi2xd\\FirstApi2xd.csproj",
       "projectName": "FirstApi2xd",
-      "projectPath": "C:\\Users\\luks_\\source\\repos\\FirstApi2xd\\FirstApi2xd\\FirstApi2xd.csproj",
+      "projectPath": "D:\\GitHubRepos\\FirstApi\\ApiNetCore\\FirstApi2xd\\FirstApi2xd\\FirstApi2xd.csproj",
       "packagesPath": "C:\\Users\\luks_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\luks_\\source\\repos\\FirstApi2xd\\FirstApi2xd\\obj\\",
+      "outputPath": "D:\\GitHubRepos\\FirstApi\\ApiNetCore\\FirstApi2xd\\FirstApi2xd\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13341,16 +13341,10 @@
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }

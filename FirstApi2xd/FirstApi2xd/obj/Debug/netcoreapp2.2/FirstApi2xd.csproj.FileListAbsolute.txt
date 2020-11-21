@@ -12,3 +12,17 @@ C:\Users\luks_\source\repos\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp2.2\Firs
 C:\Users\luks_\source\repos\FirstApi2xd\FirstApi2xd\bin\Debug\netcoreapp2.2\FirstApi2xd.pdb
 C:\Users\luks_\source\repos\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp2.2\FirstApi2xd.dll
 C:\Users\luks_\source\repos\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp2.2\FirstApi2xd.pdb
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\bin\Debug\netcoreapp2.2\FirstApi2xd.deps.json
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\bin\Debug\netcoreapp2.2\FirstApi2xd.runtimeconfig.json
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\bin\Debug\netcoreapp2.2\FirstApi2xd.runtimeconfig.dev.json
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\bin\Debug\netcoreapp2.2\FirstApi2xd.dll
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\bin\Debug\netcoreapp2.2\FirstApi2xd.pdb
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp2.2\FirstApi2xd.csprojAssemblyReference.cache
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp2.2\FirstApi2xd.csproj.CoreCompileInputs.cache
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp2.2\FirstApi2xd.RazorAssemblyInfo.cache
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp2.2\FirstApi2xd.RazorAssemblyInfo.cs
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp2.2\FirstApi2xd.AssemblyInfoInputs.cache
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp2.2\FirstApi2xd.AssemblyInfo.cs
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp2.2\FirstApi2xd.RazorTargetAssemblyInfo.cache
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp2.2\FirstApi2xd.dll
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp2.2\FirstApi2xd.pdb

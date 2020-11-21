@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "19aa05a868ad01a00ae430182c4ddab98f93bcb3"
+    "signature": "3a766bdd7aace60bde4ff92f82b63651d9ca1199"
   },
   "compilationOptions": {
     "defines": [
@@ -10,7 +10,7 @@
       "NETCOREAPP",
       "NETCOREAPP2_2"
     ],
-    "languageVersion": "",
+    "languageVersion": "latest",
     "platform": "",
     "allowUnsafe": false,
     "warningsAsErrors": false,
@@ -22,22 +22,20 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "FirstApi2xd.IntegrationTest/1.0.0": {
+      "FirstApi2xd/1.0.0": {
         "dependencies": {
-          "FirstApi2xd": "1.0.0",
-          "FluentAssertions": "2.2.0",
+          "Cosmonaut": "2.11.3",
+          "Cosmonaut.Extensions.Microsoft.DependencyInjection": "2.3.0",
           "Microsoft.AspNetCore.App": "2.2.0",
-          "Microsoft.AspNetCore.Mvc.Testing": "2.2.0",
-          "Microsoft.NET.Test.Sdk": "16.0.1",
+          "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
-          "xunit": "2.4.0",
-          "xunit.runner.visualstudio": "2.4.0"
+          "Swashbuckle.AspNetCore": "5.6.3"
         },
         "runtime": {
-          "FirstApi2xd.IntegrationTest.dll": {}
+          "FirstApi2xd.dll": {}
         },
         "compile": {
-          "FirstApi2xd.IntegrationTest.dll": {}
+          "FirstApi2xd.dll": {}
         }
       },
       "Cosmonaut/2.11.3": {
@@ -71,17 +69,6 @@
           "lib/netstandard2.0/Cosmonaut.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
-      "FluentAssertions/2.2.0": {
-        "runtime": {
-          "lib/net45/FluentAssertions.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.0"
-          }
-        },
-        "compile": {
-          "lib/net45/FluentAssertions.dll": {}
-        }
-      },
       "Humanizer.Core/2.5.16": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -101,36 +88,6 @@
           "lib/netstandard2.0/uk/Humanizer.resources.dll": {
             "locale": "uk"
           }
-        }
-      },
-      "Microsoft.AspNetCore.Mvc.Testing/2.2.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Core": "2.2.0",
-          "Microsoft.AspNetCore.TestHost": "2.2.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Testing.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Testing.dll": {}
-        }
-      },
-      "Microsoft.AspNetCore.TestHost/2.2.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Hosting": "2.2.0",
-          "System.IO.Pipelines": "4.5.2"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.TestHost.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.18316"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.TestHost.dll": {}
         }
       },
       "Microsoft.Azure.DocumentDB.Core/2.5.1": {
@@ -185,24 +142,7 @@
           "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Microsoft.CodeCoverage/16.0.1": {
-        "runtime": {
-          "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "16.0.28223.3002"
-          }
-        },
-        "compile": {
-          "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
-        }
-      },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
-      "Microsoft.NET.Test.Sdk/16.0.1": {
-        "dependencies": {
-          "Microsoft.CodeCoverage": "16.0.1",
-          "Microsoft.TestPlatform.TestHost": "16.0.1"
-        }
-      },
       "Microsoft.OpenApi/1.2.3": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
@@ -212,278 +152,6 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
-        }
-      },
-      "Microsoft.TestPlatform.ObjectModel/16.0.1": {
-        "dependencies": {
-          "NETStandard.Library": "2.0.3",
-          "System.ComponentModel.EventBasedAsync": "4.0.11",
-          "System.ComponentModel.TypeConverter": "4.1.0",
-          "System.Diagnostics.Process": "4.1.0",
-          "System.Diagnostics.TextWriterTraceListener": "4.0.0",
-          "System.Diagnostics.TraceSource": "4.0.0",
-          "System.Reflection.Metadata": "1.6.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Runtime.InteropServices.RuntimeInformation": "4.3.0",
-          "System.Runtime.Loader": "4.0.0",
-          "System.Runtime.Serialization.Json": "4.0.2",
-          "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Threading.Thread": "4.3.0",
-          "System.Xml.XPath.XmlDocument": "4.0.1"
-        },
-        "runtime": {
-          "lib/netstandard1.5/Microsoft.TestPlatform.CoreUtilities.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.0.0.0"
-          },
-          "lib/netstandard1.5/Microsoft.TestPlatform.PlatformAbstractions.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.0.0.0"
-          },
-          "lib/netstandard1.5/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.0.0.0"
-          }
-        },
-        "resources": {
-          "lib/netstandard1.5/cs/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard1.5/cs/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard1.5/de/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard1.5/de/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard1.5/es/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard1.5/es/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard1.5/fr/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard1.5/fr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard1.5/it/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard1.5/it/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard1.5/ja/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard1.5/ja/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard1.5/ko/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard1.5/ko/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard1.5/pl/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard1.5/pl/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard1.5/pt-BR/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard1.5/pt-BR/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard1.5/ru/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard1.5/ru/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard1.5/tr/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard1.5/tr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard1.5/zh-Hans/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard1.5/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard1.5/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll": {
-            "locale": "zh-Hant"
-          },
-          "lib/netstandard1.5/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        },
-        "compile": {
-          "lib/netstandard1.5/Microsoft.TestPlatform.CoreUtilities.dll": {},
-          "lib/netstandard1.5/Microsoft.TestPlatform.PlatformAbstractions.dll": {},
-          "lib/netstandard1.5/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll": {}
-        }
-      },
-      "Microsoft.TestPlatform.TestHost/16.0.1": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyModel": "2.1.0",
-          "Microsoft.TestPlatform.ObjectModel": "16.0.1",
-          "Newtonsoft.Json": "11.0.2"
-        },
-        "runtime": {
-          "lib/netstandard1.5/Microsoft.TestPlatform.CommunicationUtilities.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.0.0.0"
-          },
-          "lib/netstandard1.5/Microsoft.TestPlatform.CrossPlatEngine.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.0.0.0"
-          },
-          "lib/netstandard1.5/Microsoft.TestPlatform.Utilities.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.0.0.0"
-          },
-          "lib/netstandard1.5/Microsoft.VisualStudio.TestPlatform.Common.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.0.0.0"
-          },
-          "lib/netstandard1.5/testhost.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.0.0.0"
-          }
-        },
-        "resources": {
-          "lib/netstandard1.5/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard1.5/cs/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard1.5/cs/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard1.5/de/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard1.5/de/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard1.5/de/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard1.5/es/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard1.5/es/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard1.5/es/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard1.5/fr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard1.5/fr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard1.5/fr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard1.5/it/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard1.5/it/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard1.5/it/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard1.5/ja/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard1.5/ja/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard1.5/ja/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard1.5/ko/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard1.5/ko/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard1.5/ko/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard1.5/pl/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard1.5/pl/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard1.5/pl/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard1.5/pt-BR/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard1.5/pt-BR/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard1.5/pt-BR/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard1.5/ru/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard1.5/ru/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard1.5/ru/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard1.5/tr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard1.5/tr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard1.5/tr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard1.5/zh-Hans/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard1.5/zh-Hans/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard1.5/zh-Hans/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard1.5/zh-Hant/Microsoft.TestPlatform.CommunicationUtilities.resources.dll": {
-            "locale": "zh-Hant"
-          },
-          "lib/netstandard1.5/zh-Hant/Microsoft.TestPlatform.CrossPlatEngine.resources.dll": {
-            "locale": "zh-Hant"
-          },
-          "lib/netstandard1.5/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        },
-        "compile": {
-          "lib/netstandard1.5/Microsoft.TestPlatform.CommunicationUtilities.dll": {},
-          "lib/netstandard1.5/Microsoft.TestPlatform.CrossPlatEngine.dll": {},
-          "lib/netstandard1.5/Microsoft.TestPlatform.Utilities.dll": {},
-          "lib/netstandard1.5/Microsoft.VisualStudio.TestPlatform.Common.dll": {},
-          "lib/netstandard1.5/testhost.dll": {}
         }
       },
       "Microsoft.Win32.Primitives/4.3.0": {
@@ -648,94 +316,6 @@
         },
         "compile": {
           "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
-        }
-      },
-      "System.ComponentModel/4.0.1": {
-        "dependencies": {
-          "System.Runtime": "4.3.0"
-        }
-      },
-      "System.ComponentModel.EventBasedAsync/4.0.11": {
-        "dependencies": {
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0"
-        }
-      },
-      "System.ComponentModel.Primitives/4.1.0": {
-        "dependencies": {
-          "System.ComponentModel": "4.0.1",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
-      "System.ComponentModel.TypeConverter/4.1.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Collections.NonGeneric": "4.3.0",
-          "System.Collections.Specialized": "4.3.0",
-          "System.ComponentModel": "4.0.1",
-          "System.ComponentModel.Primitives": "4.1.0",
-          "System.Globalization": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0"
-        }
-      },
-      "System.Diagnostics.Process/4.1.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.2.0",
-          "Microsoft.Win32.Primitives": "4.3.0",
-          "Microsoft.Win32.Registry": "4.5.0",
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.IO.FileSystem": "4.3.0",
-          "System.IO.FileSystem.Primitives": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Handles": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Threading.Thread": "4.3.0",
-          "System.Threading.ThreadPool": "4.3.0",
-          "runtime.native.System": "4.3.0"
-        },
-        "runtimeTargets": {
-          "runtime/linux/lib/_._": {
-            "rid": "linux",
-            "assetType": "runtime"
-          },
-          "runtime/osx/lib/_._": {
-            "rid": "osx",
-            "assetType": "runtime"
-          },
-          "runtime/win/lib/_._": {
-            "rid": "win",
-            "assetType": "runtime"
-          }
-        }
-      },
-      "System.Diagnostics.TextWriterTraceListener/4.0.0": {
-        "dependencies": {
-          "System.Diagnostics.TraceSource": "4.0.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading": "4.3.0"
         }
       },
       "System.Diagnostics.TraceSource/4.0.0": {
@@ -976,20 +556,6 @@
           "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
-      "System.Runtime.Loader/4.0.0": {
-        "dependencies": {
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
-      "System.Runtime.Serialization.Json/4.0.2": {
-        "dependencies": {
-          "System.IO": "4.3.0",
-          "System.Private.DataContractSerialization": "4.3.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
       "System.Security.SecureString/4.0.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.2.0",
@@ -1061,111 +627,6 @@
         "dependencies": {
           "System.Runtime": "4.3.0",
           "System.Runtime.Handles": "4.3.0"
-        }
-      },
-      "System.Xml.XPath.XmlDocument/4.0.1": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XPath": "4.3.0",
-          "System.Xml.XmlDocument": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "1.0.24212.1"
-          }
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
-        }
-      },
-      "xunit/2.4.0": {
-        "dependencies": {
-          "xunit.analyzers": "0.10.0",
-          "xunit.assert": "2.4.0",
-          "xunit.core": "2.4.0"
-        }
-      },
-      "xunit.abstractions/2.0.2": {
-        "runtime": {
-          "lib/netstandard2.0/xunit.abstractions.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/xunit.abstractions.dll": {}
-        }
-      },
-      "xunit.analyzers/0.10.0": {},
-      "xunit.assert/2.4.0": {
-        "runtime": {
-          "lib/netstandard2.0/xunit.assert.dll": {
-            "assemblyVersion": "2.4.0.4049",
-            "fileVersion": "2.4.0.4049"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/xunit.assert.dll": {}
-        }
-      },
-      "xunit.core/2.4.0": {
-        "dependencies": {
-          "xunit.extensibility.core": "2.4.0",
-          "xunit.extensibility.execution": "2.4.0"
-        }
-      },
-      "xunit.extensibility.core/2.4.0": {
-        "dependencies": {
-          "xunit.abstractions": "2.0.2"
-        },
-        "runtime": {
-          "lib/netstandard2.0/xunit.core.dll": {
-            "assemblyVersion": "2.4.0.4049",
-            "fileVersion": "2.4.0.4049"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/xunit.core.dll": {}
-        }
-      },
-      "xunit.extensibility.execution/2.4.0": {
-        "dependencies": {
-          "xunit.extensibility.core": "2.4.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/xunit.execution.dotnet.dll": {
-            "assemblyVersion": "2.4.0.4049",
-            "fileVersion": "2.4.0.4049"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/xunit.execution.dotnet.dll": {}
-        }
-      },
-      "xunit.runner.visualstudio/2.4.0": {
-        "dependencies": {
-          "Microsoft.NET.Test.Sdk": "16.0.1"
-        }
-      },
-      "FirstApi2xd/1.0.0": {
-        "dependencies": {
-          "Cosmonaut": "2.11.3",
-          "Cosmonaut.Extensions.Microsoft.DependencyInjection": "2.3.0",
-          "Swashbuckle.AspNetCore": "5.6.3"
-        },
-        "runtime": {
-          "FirstApi2xd.dll": {}
-        },
-        "compile": {
-          "FirstApi2xd.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -4268,7 +3729,7 @@
     }
   },
   "libraries": {
-    "FirstApi2xd.IntegrationTest/1.0.0": {
+    "FirstApi2xd/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -4287,13 +3748,6 @@
       "path": "cosmonaut.extensions.microsoft.dependencyinjection/2.3.0",
       "hashPath": "cosmonaut.extensions.microsoft.dependencyinjection.2.3.0.nupkg.sha512"
     },
-    "FluentAssertions/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-drT3is4jd3vXI4ey7DGPGNT+b3HGeBja9ZkAmRdkiUBqQJv+ZxWK/PjPsisP2J413Xi3eH9dhNucVZsFIgyuSQ==",
-      "path": "fluentassertions/2.2.0",
-      "hashPath": "fluentassertions.2.2.0.nupkg.sha512"
-    },
     "Humanizer.Core/2.5.16": {
       "type": "package",
       "serviceable": true,
@@ -4307,20 +3761,6 @@
       "sha512": "sha512-uJIqP7vMTS7deqbJm2MTaIbtcrr+AZ6+smWL5a7fVQ71ymdDZLTZEIhjooNoLKdQn0a9CTtKP6IFtdusFgZIzQ==",
       "path": "humanizer.core.uk/2.5.16",
       "hashPath": "humanizer.core.uk.2.5.16.nupkg.sha512"
-    },
-    "Microsoft.AspNetCore.Mvc.Testing/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-T4MhVqCTsxnEAa+nbQeH6lUByRvhF6BWpUV0Y0qN1MJpMlwiRLm2gYX/bGKWVpqChQizyKeWHRniSaiqnrOr9g==",
-      "path": "microsoft.aspnetcore.mvc.testing/2.2.0",
-      "hashPath": "microsoft.aspnetcore.mvc.testing.2.2.0.nupkg.sha512"
-    },
-    "Microsoft.AspNetCore.TestHost/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-qjynDPGtn+5t1IHzFW2VpPoX+tkNVoI3htySJINETsvfGdKshs8keYOpDVpRfx6x7bGoN4G5icL7lKFPmAu/eA==",
-      "path": "microsoft.aspnetcore.testhost/2.2.0",
-      "hashPath": "microsoft.aspnetcore.testhost.2.2.0.nupkg.sha512"
     },
     "Microsoft.Azure.DocumentDB.Core/2.5.1": {
       "type": "package",
@@ -4336,13 +3776,6 @@
       "path": "microsoft.bcl.asyncinterfaces/1.0.0",
       "hashPath": "microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512"
     },
-    "Microsoft.CodeCoverage/16.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-W7WI3iH6At2I/9x2ODgCIIMO0QfpA7ZCoHkeygMLAaz3Nms/GsugKz9N4hkTve2Lj66g2K4CAmbwe6utEH66lw==",
-      "path": "microsoft.codecoverage/16.0.1",
-      "hashPath": "microsoft.codecoverage.16.0.1.nupkg.sha512"
-    },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",
       "serviceable": true,
@@ -4350,33 +3783,12 @@
       "path": "microsoft.extensions.apidescription.server/3.0.0",
       "hashPath": "microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512"
     },
-    "Microsoft.NET.Test.Sdk/16.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ON7UIMIhAwrYb0ep+3ztoWVGvtfo88IhiHVnbyOiuVsi8bOMCdMPVcR+EX1WYGgKAd030pHRaxazMlkQ6uDyJQ==",
-      "path": "microsoft.net.test.sdk/16.0.1",
-      "hashPath": "microsoft.net.test.sdk.16.0.1.nupkg.sha512"
-    },
     "Microsoft.OpenApi/1.2.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
       "path": "microsoft.openapi/1.2.3",
       "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
-    },
-    "Microsoft.TestPlatform.ObjectModel/16.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-AIQ9azu2b31R8nOuFnR32d7cdWidjjLl1dFyLC3LNifzAJoEdCUgkHWUpTTHKWcHhwa9E/NRcdzVple8pbKJ9Q==",
-      "path": "microsoft.testplatform.objectmodel/16.0.1",
-      "hashPath": "microsoft.testplatform.objectmodel.16.0.1.nupkg.sha512"
-    },
-    "Microsoft.TestPlatform.TestHost/16.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-H4bYjOjkK4FYQ23RnsHm8FcqR0te8Eky9i9sS1IjVFBlDh1MU7aIwmBUpKpaSAy5xNu7UTHku4RZTWzWHDzS7g==",
-      "path": "microsoft.testplatform.testhost/16.0.1",
-      "hashPath": "microsoft.testplatform.testhost.16.0.1.nupkg.sha512"
     },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",
@@ -4497,48 +3909,6 @@
       "path": "swashbuckle.aspnetcore.swaggerui/5.6.3",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
     },
-    "System.ComponentModel/4.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-oBZFnm7seFiVfugsIyOvQCWobNZs7FzqDV/B7tx20Ep/l3UUFCPDkdTnCNaJZTU27zjeODmy2C/cP60u3D4c9w==",
-      "path": "system.componentmodel/4.0.1",
-      "hashPath": "system.componentmodel.4.0.1.nupkg.sha512"
-    },
-    "System.ComponentModel.EventBasedAsync/4.0.11": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Z7SO6vvQIR84daPE4uhaNdef9CjgjDMGYkas8epUhf0U3WGuaGgZ0Mm4QuNycMdbHUY8KEdZrtgxonkAiJaAlA==",
-      "path": "system.componentmodel.eventbasedasync/4.0.11",
-      "hashPath": "system.componentmodel.eventbasedasync.4.0.11.nupkg.sha512"
-    },
-    "System.ComponentModel.Primitives/4.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-sc/7eVCdxPrp3ljpgTKVaQGUXiW05phNWvtv/m2kocXqrUQvTVWKou1Edas2aDjTThLPZOxPYIGNb/HN0QjURg==",
-      "path": "system.componentmodel.primitives/4.1.0",
-      "hashPath": "system.componentmodel.primitives.4.1.0.nupkg.sha512"
-    },
-    "System.ComponentModel.TypeConverter/4.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-MnDAlaeJZy9pdB5ZdOlwdxfpI+LJQ6e0hmH7d2+y2LkiD8DRJynyDYl4Xxf3fWFm7SbEwBZh4elcfzONQLOoQw==",
-      "path": "system.componentmodel.typeconverter/4.1.0",
-      "hashPath": "system.componentmodel.typeconverter.4.1.0.nupkg.sha512"
-    },
-    "System.Diagnostics.Process/4.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-mpVZ5bnlSs3tTeJ6jYyDJEIa6tavhAd88lxq1zbYhkkCu0Pno2+gHXcvZcoygq2d8JxW3gojXqNJMTAshduqZA==",
-      "path": "system.diagnostics.process/4.1.0",
-      "hashPath": "system.diagnostics.process.4.1.0.nupkg.sha512"
-    },
-    "System.Diagnostics.TextWriterTraceListener/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-w36Dr8yKy8xP150qPANe7Td+/zOI3G62ImRcHDIEW+oUXUuTKZHd4DHmqRx5+x8RXd85v3tXd1uhNTfsr+yxjA==",
-      "path": "system.diagnostics.textwritertracelistener/4.0.0",
-      "hashPath": "system.diagnostics.textwritertracelistener.4.0.0.nupkg.sha512"
-    },
     "System.Diagnostics.TraceSource/4.0.0": {
       "type": "package",
       "serviceable": true,
@@ -4609,20 +3979,6 @@
       "path": "system.runtime.compilerservices.unsafe/4.6.0",
       "hashPath": "system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
     },
-    "System.Runtime.Loader/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-4UN78GOVU/mbDFcXkEWtetJT/sJ0yic2gGk1HSlSpWI0TDf421xnrZTDZnwNBapk1GQeYN7U1lTj/aQB1by6ow==",
-      "path": "system.runtime.loader/4.0.0",
-      "hashPath": "system.runtime.loader.4.0.0.nupkg.sha512"
-    },
-    "System.Runtime.Serialization.Json/4.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-+7DIJhnKYgCzUgcLbVTtRQb2l1M0FP549XFlFkQM5lmNiUBl44AfNbx4bz61xA8PzLtlYwfmif4JJJW7MPPnjg==",
-      "path": "system.runtime.serialization.json/4.0.2",
-      "hashPath": "system.runtime.serialization.json.4.0.2.nupkg.sha512"
-    },
     "System.Security.SecureString/4.0.0": {
       "type": "package",
       "serviceable": true,
@@ -4657,74 +4013,6 @@
       "sha512": "sha512-k/+g4b7vjdd4aix83sTgC9VG6oXYKAktSfNIJUNGxPEj7ryEOfzHHhfnmsZvjxawwcD9HyWXKCXmPjX8U4zeSw==",
       "path": "system.threading.threadpool/4.3.0",
       "hashPath": "system.threading.threadpool.4.3.0.nupkg.sha512"
-    },
-    "System.Xml.XPath.XmlDocument/4.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Zm2BdeanuncYs3NhCj4c9e1x3EXFzFBVv2wPEc/Dj4ZbI9R8ecLSR5frAsx4zJCPBtKQreQ7Q/KxJEohJZbfzA==",
-      "path": "system.xml.xpath.xmldocument/4.0.1",
-      "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
-    },
-    "xunit/2.4.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-NL00nGsDsyWc1CWxz5FXXjLpW9oFG18WJoTPCyhNv4KGP/e5iLJqAqgM1uaJZyQ6WaTtmWIy4yjYP3RdcaT7Vw==",
-      "path": "xunit/2.4.0",
-      "hashPath": "xunit.2.4.0.nupkg.sha512"
-    },
-    "xunit.abstractions/2.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vItLB0WkaKg0426RgWq+ZdXH6D+YV/uH28C0weWMOBnVx7I+luHuEYss9hoOngpkiN5kUpLvh9VZRx1H2sk59A==",
-      "path": "xunit.abstractions/2.0.2",
-      "hashPath": "xunit.abstractions.2.0.2.nupkg.sha512"
-    },
-    "xunit.analyzers/0.10.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-4/IDFCJfIeg6bix9apmUtIMwvOsiwqdEexeO/R2D4GReIGPLIRODTpId/l4LRSrAJk9lEO3Zx1H0Zx6uohJDNg==",
-      "path": "xunit.analyzers/0.10.0",
-      "hashPath": "xunit.analyzers.0.10.0.nupkg.sha512"
-    },
-    "xunit.assert/2.4.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Swvkm6iTjZr8TiUj5vMnmfG+2dD4s/BIBgsVOzTxxmoq2ndGsmM2WIL4wuqJ8RhxydWIDOPpIaaytjT2pMTEdg==",
-      "path": "xunit.assert/2.4.0",
-      "hashPath": "xunit.assert.2.4.0.nupkg.sha512"
-    },
-    "xunit.core/2.4.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-BJ/O/tPEcHUCwQYuwqXoYccTMyw6B5dA6yh7WxWWBhKbjqTsG9RWL0nCQXM5yQYJwUuFzBkiXDPN1BO6UdBB4Q==",
-      "path": "xunit.core/2.4.0",
-      "hashPath": "xunit.core.2.4.0.nupkg.sha512"
-    },
-    "xunit.extensibility.core/2.4.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-qr/KrR6uukHXD9e/lLQjyCPfMEDuvvhNFDzsYzCF2kKlYKiqcADfUvA9Q68rBtKFtwHFeghjWEuv15KoGD2SfA==",
-      "path": "xunit.extensibility.core/2.4.0",
-      "hashPath": "xunit.extensibility.core.2.4.0.nupkg.sha512"
-    },
-    "xunit.extensibility.execution/2.4.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-252Dzn7i5bMPKtAL15aOP3qJhxKd+57I8ldwIQRJa745JxQuiBu5Da0vtIISVTtc3buRSkBwVnD9iUzsEmCzZA==",
-      "path": "xunit.extensibility.execution/2.4.0",
-      "hashPath": "xunit.extensibility.execution.2.4.0.nupkg.sha512"
-    },
-    "xunit.runner.visualstudio/2.4.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3eq5cGXbEJkqW9nwLuXwtxy9B5gMA8i7HW4rN63AhAvy5UvEcQbZnve23wx/oPrkyg/4CbfNhxkBezS0b1oUdQ==",
-      "path": "xunit.runner.visualstudio/2.4.0",
-      "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
-    },
-    "FirstApi2xd/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",

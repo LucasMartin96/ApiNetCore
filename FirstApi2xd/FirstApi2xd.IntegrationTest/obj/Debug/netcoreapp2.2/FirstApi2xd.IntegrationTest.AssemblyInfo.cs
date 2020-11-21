@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("FirstApi2xd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\GitHubRepos\\FirstApi\\ApiNetCore\\FirstApi2xd\\FirstApi2xd", "FirstApi2xd.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("FirstApi2xd.IntegrationTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
