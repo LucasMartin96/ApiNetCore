@@ -11,10 +11,13 @@ namespace FirstApi2xd.Installers
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
+            // AddRoles nos da acceso al rol manager
+
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<DataContext>();
 
             services.AddScoped<IPostService, PostService>();

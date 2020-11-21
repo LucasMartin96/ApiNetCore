@@ -14,5 +14,8 @@ namespace FirstApi2xd.Services
         Task<bool> DeletePostAsync(Guid postToDelete);
         Task<bool> UserOwnsPostAsync(Guid postId, string getUserId);
         Task<List<Tags>> GetAllTagsAsync();
+        Task<bool> CreateTagAsync(Tags tag);
+        Task<Tags> GetTagByNameAsync(string tagName);
+        Task<bool> DeleteTagAsync(string tagName);
     }
 }

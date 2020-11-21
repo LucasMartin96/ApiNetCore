@@ -52,10 +52,16 @@ namespace FirstApi2xd.Installers
                 x.TokenValidationParameters = tokenValidationParameters;
             });
 
-            services.AddAuthorization(options =>
+            /*
+             Esto es para restringir endpoints mediante claims en la JWT
+
+             services.AddAuthorization(options =>
                 {
                     options.AddPolicy("TagViewer", builder => builder.RequireClaim("tags.view", "true"));
                 });
+            */
+
+
 
             services.AddSwaggerGen(x =>
             {

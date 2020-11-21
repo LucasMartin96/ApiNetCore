@@ -79,6 +79,39 @@ namespace FirstApi2xd.Services
             return await _dataContex.Tags.AsNoTracking().ToListAsync();
         }
 
+        public async Task<bool> CreateTagAsync(Tags tag)
+        {
+            tag.Name = tag.Name.ToLower();
+            var existingTag = await _dataContex.Tags.AsNoTracking().SingleOrDefaultAsync(x => x.Name == tag.Name);
+            if (existingTag != null)
+            {
+                return false;
+            }
+
+            await _dataContex.Tags.AddAsync(tag);
+            var created = await _dataContex.SaveChangesAsync();
+            return created > 0;
+        }
+
+        public async Task<Tags> GetTagByNameAsync(string tagName)
+        {
+            return await _dataContex.Tags.AsNoTracking().SingleOrDefaultAsync(x => x.Name == tagName.ToLower());
+        }
+
+        public async Task<bool> DeleteTagAsync(string tagName)
+        {
+            var tag = await _dataContex.Tags.AsNoTracking().SingleOrDefaultAsync(x => x.Name == tagName.ToLower());
+            if (tag == null) return false;
+
+            var postTags = await _dataContex.PostTag.Where(x => x.TagName == tagName.ToLower()).ToListAsync();
+            
+            // Remove range lo uso cuando necesito eliminar todos los elementos de una coleccion
+            _dataContex.RemoveRange(postTags);
+            _dataContex.Remove(tag);
+            return await _dataContex.SaveChangesAsync() > postTags.Count;
+
+        }
+
         private async Task AddNewTags(Post post)
         {
             foreach (var tag in post.Tags)

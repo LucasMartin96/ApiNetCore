@@ -32,7 +32,14 @@ namespace FirstApi2xd.Controllers.V1
 
             }
 
-            var authResponse = await _identityService.RegisterAsync(request.Email, request.Password);
+            if (request.Role == "" || (request.Role.ToLower() != "admin" && request.Role.ToLower() != "poster"))
+            {
+                return BadRequest(new AuthFailResponse
+                {
+                    Errors = new []{"Invalid role"}
+                });
+            }
+            var authResponse = await _identityService.RegisterAsync(request.Email, request.Password, request.Role);
 
 
             return asd(authResponse);

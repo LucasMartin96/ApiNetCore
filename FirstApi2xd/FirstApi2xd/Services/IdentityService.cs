@@ -21,16 +21,18 @@ namespace FirstApi2xd.Services
         private readonly JwtSettings _jwtSettings;
         private readonly TokenValidationParameters _tokenValidationParameters;
         private readonly DataContext _context;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public IdentityService(UserManager<IdentityUser> userManager, JwtSettings jwtSettings, TokenValidationParameters tokenValidationParameters, DataContext context)
+        public IdentityService(UserManager<IdentityUser> userManager, JwtSettings jwtSettings, TokenValidationParameters tokenValidationParameters, DataContext context, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _jwtSettings = jwtSettings;
             _tokenValidationParameters = tokenValidationParameters;
             _context = context;
+            _roleManager = roleManager;
         }
 
-        public async Task<AuthenticationResult> RegisterAsync(string email, string password)
+        public async Task<AuthenticationResult> RegisterAsync(string email, string password, string role)
         {
 
             var exists = await _userManager.FindByEmailAsync(email);
@@ -62,10 +64,14 @@ namespace FirstApi2xd.Services
             }
 
             // Agregamos la claim al user
-            await _userManager.AddClaimAsync(newUser, new Claim("tags.view", "true"));
+            //await _userManager.AddClaimAsync(newUser, new Claim("tags.view", "true"));
+
+            // Agregamos el rol al usuario
+            await _userManager.AddToRoleAsync(newUser, role);
 
             return await GenerateAuthenticationResultForUserAsync(newUser);
         }
+
 
         public async Task<AuthenticationResult> LoginAsync(string email, string password)
         {
@@ -182,16 +188,37 @@ namespace FirstApi2xd.Services
                 new Claim("id", user.Id),
             };
 
+            // Agrega las claims a la token
             var userClaims = await _userManager.GetClaimsAsync(user);
             
             claims.AddRange(userClaims);
+
+            // Agrega los roles a la token
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            foreach (var userRole in userRoles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, userRole));
+                var role = await _roleManager.FindByNameAsync(userRole);
+                if(role == null) continue;
+                var roleClaims = await _roleManager.GetClaimsAsync(role);
+
+                foreach (var roleClaim in roleClaims)
+                {
+                    if(claims.Contains(roleClaim)) continue;
+                    claims.Add(roleClaim);
+                }
+            }
+
+            // Hasta aca
+
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.Add(_jwtSettings.TokenLifetime),
                 SigningCredentials =
-                    new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                    new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
