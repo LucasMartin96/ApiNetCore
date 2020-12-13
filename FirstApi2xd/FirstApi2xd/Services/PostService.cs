@@ -10,23 +10,23 @@ namespace FirstApi2xd.Services
 {
     public class PostService : IPostService
     {
-        private readonly DataContext _dataContex;
+        private readonly DataContext _dataContext;
 
         public PostService(DataContext dbContext)
         {
-            _dataContex = dbContext;
+            _dataContext = dbContext;
         }
 
         public async Task<List<Post>> GetPostsAsync()
         {
             // El Include agrega los tags del post
-            return await _dataContex.Posts.Include(x=> x.Tags).ToListAsync();
+            return await _dataContext.Posts.Include(x=> x.Tags).ToListAsync();
         }
 
         public async Task<Post> GetPostByIdAsync(Guid postId)
         {
             // El Include agrega los tags del post
-            return await _dataContex.Posts.Include(x=> x.Tags).SingleOrDefaultAsync(x => x.Id == postId);
+            return await _dataContext.Posts.Include(x=> x.Tags).SingleOrDefaultAsync(x => x.Id == postId);
         }
 
         public async Task<bool> CreatePostAsync(Post post)
@@ -35,9 +35,9 @@ namespace FirstApi2xd.Services
 
             await AddNewTags(post);
 
-            await _dataContex.Posts.AddAsync(post);
+            await _dataContext.Posts.AddAsync(post);
 
-            var created = await _dataContex.SaveChangesAsync();
+            var created = await _dataContext.SaveChangesAsync();
             return created > 0;
 
         }
@@ -47,10 +47,10 @@ namespace FirstApi2xd.Services
             postToUpdate.Tags?.ForEach(x=> x.TagName = x.TagName.ToLower());
 
             await AddNewTags(postToUpdate);
-            _dataContex.Posts.Update(postToUpdate);
+            _dataContext.Posts.Update(postToUpdate);
 
 
-            var updated = await _dataContex.SaveChangesAsync();
+            var updated = await _dataContext.SaveChangesAsync();
             return updated > 0;
         }
 
@@ -62,53 +62,53 @@ namespace FirstApi2xd.Services
                 return false;
             }
 
-            _dataContex.Posts.Remove(post);
-            var deleted = await _dataContex.SaveChangesAsync();
+            _dataContext.Posts.Remove(post);
+            var deleted = await _dataContext.SaveChangesAsync();
             return deleted > 0;
 
         }
 
         public async Task<bool> UserOwnsPostAsync(Guid postId, string userId)
         {
-            var post = await _dataContex.Posts.AsNoTracking().SingleOrDefaultAsync(x => x.Id == postId);
+            var post = await _dataContext.Posts.AsNoTracking().SingleOrDefaultAsync(x => x.Id == postId);
             return post != null && post.UserId == userId;
         }
 
         public async Task<List<Tags>> GetAllTagsAsync()
         {
-            return await _dataContex.Tags.AsNoTracking().ToListAsync();
+            return await _dataContext.Tags.AsNoTracking().ToListAsync();
         }
 
         public async Task<bool> CreateTagAsync(Tags tag)
         {
             tag.Name = tag.Name.ToLower();
-            var existingTag = await _dataContex.Tags.AsNoTracking().SingleOrDefaultAsync(x => x.Name == tag.Name);
+            var existingTag = await _dataContext.Tags.AsNoTracking().SingleOrDefaultAsync(x => x.Name == tag.Name);
             if (existingTag != null)
             {
                 return false;
             }
 
-            await _dataContex.Tags.AddAsync(tag);
-            var created = await _dataContex.SaveChangesAsync();
+            await _dataContext.Tags.AddAsync(tag);
+            var created = await _dataContext.SaveChangesAsync();
             return created > 0;
         }
 
         public async Task<Tags> GetTagByNameAsync(string tagName)
         {
-            return await _dataContex.Tags.AsNoTracking().SingleOrDefaultAsync(x => x.Name == tagName.ToLower());
+            return await _dataContext.Tags.AsNoTracking().SingleOrDefaultAsync(x => x.Name == tagName.ToLower());
         }
 
         public async Task<bool> DeleteTagAsync(string tagName)
         {
-            var tag = await _dataContex.Tags.AsNoTracking().SingleOrDefaultAsync(x => x.Name == tagName.ToLower());
+            var tag = await _dataContext.Tags.AsNoTracking().SingleOrDefaultAsync(x => x.Name == tagName.ToLower());
             if (tag == null) return false;
 
-            var postTags = await _dataContex.PostTag.Where(x => x.TagName == tagName.ToLower()).ToListAsync();
+            var postTags = await _dataContext.PostTag.Where(x => x.TagName == tagName.ToLower()).ToListAsync();
             
             // Remove range lo uso cuando necesito eliminar todos los elementos de una coleccion
-            _dataContex.RemoveRange(postTags);
-            _dataContex.Remove(tag);
-            return await _dataContex.SaveChangesAsync() > postTags.Count;
+            _dataContext.RemoveRange(postTags);
+            _dataContext.Remove(tag);
+            return await _dataContext.SaveChangesAsync() > postTags.Count;
 
         }
 
@@ -117,13 +117,13 @@ namespace FirstApi2xd.Services
             foreach (var tag in post.Tags)
             {
                 var existingTag =
-                    await _dataContex.Tags.SingleOrDefaultAsync(x => x.Name == tag.TagName);
+                    await _dataContext.Tags.SingleOrDefaultAsync(x => x.Name == tag.TagName);
                 if (existingTag != null)
                 {
                     continue;
                 }
 
-                await _dataContex.Tags.AddAsync(new Tags
+                await _dataContext.Tags.AddAsync(new Tags
                 {
                     Name = tag.TagName, CreatedOn = DateTime.UtcNow, CreatorId = post.UserId
                 });

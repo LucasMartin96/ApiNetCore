@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using FirstApi2xd.Contracts.v1;
 using FirstApi2xd.Contracts.v1.Requests;
+using FirstApi2xd.Contracts.v1.Responses;
 using FirstApi2xd.Domain;
 using FirstApi2xd.Extensions;
 using FirstApi2xd.Services;
@@ -17,10 +21,12 @@ namespace FirstApi2xd.Controllers.V1
     public class TagsController : Controller
     {
         private readonly IPostService _postService;
+        private readonly IMapper _mapper;
 
-        public TagsController(IPostService postService)
+        public TagsController(IPostService postService, IMapper mapper)
         {
             _postService = postService;
+            _mapper = mapper;
         }
 
         [HttpGet(ApiRoutes.Tags.GetAll)]
@@ -28,7 +34,8 @@ namespace FirstApi2xd.Controllers.V1
         // [Authorize(Policy = "TagViewer")] Sirve para que el metodo sea accesible unicamente con el claim
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _postService.GetAllTagsAsync());
+            var tags = await _postService.GetAllTagsAsync();
+            return Ok(_mapper.Map<List<TagResponse>>(tags));
         }
 
         [HttpGet(ApiRoutes.Tags.Get)]
@@ -39,7 +46,7 @@ namespace FirstApi2xd.Controllers.V1
             if (tag == null)
                 return NotFound();
 
-            return Ok(tag);
+            return Ok(_mapper.Map<TagResponse>(tag));
         }
 
         [HttpPost(ApiRoutes.Tags.Create)]
@@ -62,7 +69,7 @@ namespace FirstApi2xd.Controllers.V1
             var locationUri = baseUrl + "/" + ApiRoutes.Tags.Get.Replace("{tagName}", newTag.Name);
 
 
-            return Ok(new {TagName= newTag.Name});
+            return Created(locationUri,_mapper.Map<TagResponse>(newTag));
         }
 
         [HttpDelete(ApiRoutes.Tags.Delete)]

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using FirstApi2xd.Contracts.v1;
 using FirstApi2xd.Contracts.v1.Requests;
 using FirstApi2xd.Contracts.v1.Responses;
@@ -18,15 +19,17 @@ namespace FirstApi2xd.Controllers.V1
     public class PostsController : Controller
     {
         private readonly IPostService _postService;
-        public PostsController(IPostService postService)
+        private readonly IMapper _mapper;
+        public PostsController(IPostService postService, IMapper mapper)
         {
             _postService = postService;
+            _mapper = mapper;
         }
         [HttpGet(ApiRoutes.Posts.GetAll)]
         public async Task<IActionResult> GetAll()
         {
-            
-            return Ok(await _postService.GetPostsAsync());
+            var posts = await _postService.GetPostsAsync();
+            return Ok(_mapper.Map<List<PostResponse>>(posts));
         }
 
         [HttpPut(ApiRoutes.Posts.Update)]
@@ -45,7 +48,7 @@ namespace FirstApi2xd.Controllers.V1
             var update = await _postService.UpdatePostAsync(post);
 
             if (update)
-                return Ok(post);
+                return Ok(_mapper.Map<PostResponse>(post));
 
             return NotFound();
         }
@@ -77,7 +80,7 @@ namespace FirstApi2xd.Controllers.V1
             if (post == null)
                 return NotFound();
             
-            return Ok(post);
+            return Ok(_mapper.Map<PostResponse>(post));
         }
 
         [HttpPost(ApiRoutes.Posts.Create)]
@@ -96,9 +99,8 @@ namespace FirstApi2xd.Controllers.V1
 
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
             var locationUri = baseUrl + "/" + ApiRoutes.Posts.Get.Replace("{postId}" , post.Id.ToString());
-            var response = new PostResponse{Id = post.Id};
 
-            return Created(locationUri, response);
+            return Created(locationUri, _mapper.Map<PostResponse>(post));
 
         }
 

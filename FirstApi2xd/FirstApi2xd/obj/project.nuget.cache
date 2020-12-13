@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ou9a/NmIM01HnXFKMx7PWOhFt5HNV7lIGpksTHE/Fio7E3OucBMRziH0Ja3Pouo2r+M4UsBMyA4sDS7kkWReww==",
+  "dgSpecHash": "u6LmERM8jyE38H7MaaOXApQU+4Uh0iblZBsLokegHv23PZTeI3CYMpen0GOXViAhYNTLDSmucMGGaXws94rCyA==",
   "success": true,
   "projectFilePath": "D:\\GitHubRepos\\FirstApi\\ApiNetCore\\FirstApi2xd\\FirstApi2xd\\FirstApi2xd.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\luks_\\.nuget\\packages\\automapper\\8.1.1\\automapper.8.1.1.nupkg.sha512",
+    "C:\\Users\\luks_\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.1.1\\automapper.extensions.microsoft.dependencyinjection.6.1.1.nupkg.sha512",
     "C:\\Users\\luks_\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.0.0\\microsoft.aspnetcore.authentication.jwtbearer.3.0.0.nupkg.sha512",
     "C:\\Users\\luks_\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.0.0\\microsoft.aspnetcore.cryptography.internal.3.0.0.nupkg.sha512",
     "C:\\Users\\luks_\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.0.0\\microsoft.aspnetcore.cryptography.keyderivation.3.0.0.nupkg.sha512",

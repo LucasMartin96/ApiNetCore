@@ -52,6 +52,8 @@ D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp3
 D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp3.0\FirstApi2xd.pdb
 D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp3.0\FirstApi2xd.genruntimeconfig.cache
 D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\bin\Debug\netcoreapp3.0\AutoMapper.dll
+D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\bin\Debug\netcoreapp3.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp3.0\FirstApi2xd.csproj.CoreCompileInputs.cache
 D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp3.0\FirstApi2xd.MvcApplicationPartsAssemblyInfo.cs
 D:\GitHubRepos\FirstApi\ApiNetCore\FirstApi2xd\FirstApi2xd\obj\Debug\netcoreapp3.0\FirstApi2xd.MvcApplicationPartsAssemblyInfo.cache

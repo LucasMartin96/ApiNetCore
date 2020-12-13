@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "u+5sMPcbouXyNL35LEkBLhsPyg5pKaqdLL8tZwrTQl75mMK+Vb+qjSCEqJupcf8YRw20oCYuJNCkAgm+W5ZKLA==",
+  "dgSpecHash": "NUQyUPWLDWMQQa8XJsITswCFIbs3nsrSs4Tn/yDMgYVEs4sylp93hWod5i+6hYk0JtP3jaey3xsL3FE3kHJKkA==",
   "success": true,
   "projectFilePath": "D:\\GitHubRepos\\FirstApi\\ApiNetCore\\FirstApi2xd\\FirstApi2xd.IntegrationTest\\FirstApi2xd.IntegrationTest.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\luks_\\.nuget\\packages\\automapper\\8.1.1\\automapper.8.1.1.nupkg.sha512",
+    "C:\\Users\\luks_\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.1.1\\automapper.extensions.microsoft.dependencyinjection.6.1.1.nupkg.sha512",
     "C:\\Users\\luks_\\.nuget\\packages\\fluentassertions\\2.2.0\\fluentassertions.2.2.0.nupkg.sha512",
     "C:\\Users\\luks_\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\luks_\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.0.0\\microsoft.aspnetcore.authentication.jwtbearer.3.0.0.nupkg.sha512",
